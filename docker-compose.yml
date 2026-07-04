@@ -1,0 +1,9 @@
+# GREYCACHE — instalação pública via imagem pronta (sem acesso ao código-fonte)
+# Cole este arquivo como Stack no Portainer ou rode: docker compose up -d
+services:
+  greycache:
+    image: ghcr.io/ianmaicon/greycache:latest
+    container_name: greycache
+    ports:
+      - "8090:80"
+    restart: unless-stopped
