@@ -28,9 +28,24 @@ services:
     ports:
       - "8090:80"
     restart: unless-stopped
+    # Sem volumes, de propósito: os dados vivem no dispositivo de cada
+    # usuário (IndexedDB) — backup pelo próprio app (Ajustes → Exportar JSON)
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /run
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
 ```
 
 No Portainer: **Stacks → Add stack → Web editor**, cole o YAML acima e faça o deploy.
+O container roda com filesystem **somente leitura** (endurecimento) — o nginx escreve apenas em tmpfs.
 
 ## Notas de operação
 

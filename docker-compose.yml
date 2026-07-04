@@ -7,3 +7,30 @@ services:
     ports:
       - "8090:80"
     restart: unless-stopped
+
+    # SEM VOLUMES — de propósito: o servidor só entrega arquivos estáticos.
+    # Os dados do app vivem no navegador/dispositivo de cada usuário
+    # (IndexedDB); backup é feito no próprio app (Ajustes → Exportar JSON).
+    # Um volume de "dados" aqui só criaria uma falsa sensação de backup.
+
+    # Endurecimento: filesystem imutável — o nginx só escreve em cache/pid,
+    # que ficam em tmpfs (memória). Container comprometido não persiste nada.
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /run
+    security_opt:
+      - no-new-privileges:true
+
+    # Saúde do serviço (visível no Portainer e em ferramentas de uptime)
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+    # Limites opcionais — nginx estático usa quase nada; descomente se quiser
+    # teto explícito no homelab:
+    # mem_limit: 128m
+    # cpus: "0.50"
