@@ -6,7 +6,7 @@ Central de operações **100% offline** para preppers, sobrevivencialistas e ges
 
 ## O que o app faz
 
-- **Modo Preparação** (rotina): inventário com autonomia calculada (calorias estimadas automaticamente, validades por lote), estoque mínimo com Lista de Recompra, caixa de medicamentos, frota com checklists, equipamentos e manutenção, arsenal com documentos vigiados, mapa offline com waypoints, biblioteca de conhecimento, Índice de Prontidão 0–100 e Revisão Semanal guiada.
+- **Modo Preparação** (rotina): inventário com autonomia calculada (calorias estimadas automaticamente, validades por lote), estoque mínimo com Lista de Recompra, caixa de medicamentos com cobertura em dias da medicação de uso contínuo, frota com checklists, equipamentos e manutenção, arsenal com documentos vigiados, mapa com waypoints e áreas offline (com uma fonte de mapas que permita uso offline), biblioteca de conhecimento, Índice de Prontidão 0–100 e Revisão Semanal guiada.
 - **Modo Colapso** (crise ativa): decisão de Bug Out por gatilhos, plano de reunificação, painel de água, calculadora de energia, mapa de situação, registro de perímetro e consumo real vs planejado.
 - **Privacidade por arquitetura**: sem anúncios, sem conta, sem "ligar para casa" — para sempre.
 
@@ -17,6 +17,13 @@ docker run -d --name greycache -p 8090:80 --restart unless-stopped ghcr.io/ianma
 ```
 
 Abra `http://SEU_IP:8090`. No celular, use **"Adicionar à tela inicial"** para instalar como app.
+
+## App Android (APK)
+
+Baixe o `greycache-vX.Y.Z.apk` da versão mais recente em
+**[Releases](https://github.com/ianmaicon/greycache/releases/latest)** e instale no aparelho
+(permita "instalar apps desconhecidos" para o navegador/gerenciador de arquivos).
+Notificações agendadas e backup automático em pasta só existem no APK.
 
 ## Docker Compose / Portainer
 
