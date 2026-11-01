@@ -8,6 +8,9 @@ Central de operações **100% offline** para preppers, sobrevivencialistas e ges
 
 - **Modo Preparação** (rotina): inventário com autonomia calculada (calorias estimadas automaticamente, validades por lote), estoque mínimo com Lista de Recompra, caixa de medicamentos com cobertura em dias da medicação de uso contínuo, frota com checklists, equipamentos e manutenção, arsenal com documentos vigiados, mapa com waypoints e áreas offline (com uma fonte de mapas que permita uso offline), biblioteca de conhecimento, Índice de Prontidão 0–100 e Revisão Semanal guiada.
 - **Modo Colapso** (crise ativa): decisão de Bug Out por gatilhos, plano de reunificação, painel de água, calculadora de energia, mapa de situação, registro de perímetro e consumo real vs planejado.
+- **Fácil de começar e de usar**: assistente monta o kit da casa pelo tamanho do grupo e pelos dias de autonomia (você informa o que já tem e o resto vira lista de compras); painel **Hoje** com as poucas tarefas que importam agora; texto em três tamanhos; telas com janelas e botões grandes; português, inglês e espanhol.
+- **Pasta de emergência** em PDF para imprimir: contatos, cartões médicos, plano de comunicação, reunificação, locais do mapa, mochila de fuga, remédios e veículos.
+- **Backup com senha** (AES-256, tudo no aparelho) e backup automático em pasta no APK.
 - **Privacidade por arquitetura**: sem anúncios, sem conta, sem "ligar para casa" — para sempre.
 
 ## Instalação rápida
@@ -24,6 +27,10 @@ Baixe o `greycache-vX.Y.Z.apk` da versão mais recente em
 **[Releases](https://github.com/ianmaicon/greycache/releases/latest)** e instale no aparelho
 (permita "instalar apps desconhecidos" para o navegador/gerenciador de arquivos).
 Notificações agendadas e backup automático em pasta só existem no APK.
+
+Para receber as atualizações sem baixar o APK à mão, use o
+**[Obtainium](https://github.com/ImranR98/Obtainium)**: Adicionar app →
+`https://github.com/ianmaicon/greycache`.
 
 ## Docker Compose / Portainer
 
@@ -62,6 +69,10 @@ O container roda com filesystem **somente leitura** (endurecimento) — o nginx 
 - **HTTPS**: para instalar o PWA fora de `localhost`, os navegadores exigem HTTPS — use seu reverse proxy habitual (Traefik, NPM, Caddy) na frente da porta 80.
 - **Faça backup**: Ajustes → Exportar Backup JSON. Dados 100% locais significam que o backup é responsabilidade sua — o app avisa quando ele envelhece.
 - Multi-arch: **amd64** e **arm64** (roda em NAS, mini-PC e Raspberry Pi).
+
+## Privacidade
+
+O app não coleta nada — veja a [Política de Privacidade](PRIVACIDADE.md).
 
 ## Bugs e sugestões
 
