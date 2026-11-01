@@ -1,5 +1,5 @@
 {
   "latest": "0.6.0",
   "url": "https://github.com/ianmaicon/greycache/releases/latest",
-  "notes": "PIN com hash e limite de tentativas, restauração de backup segura, ICE na tela de bloqueio, cobertura da medicação contínua, armazenamento persistente e Manual do app 1.1.0."
+  "notes": "Painel Hoje com as tarefas do dia, pasta de emergência em PDF para imprimir, kit inicial com o que você já tem, telas mais fáceis com texto maior e Ajustes em módulos."
 }
