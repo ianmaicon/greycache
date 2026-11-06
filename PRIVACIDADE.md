@@ -25,6 +25,20 @@ envia os seus dados:
   o OpenStreetMap). Esse servidor recebe o IP e a área do mapa que está sendo
   vista, como em qualquer site de mapas.
 - **Links que você abrir** (repositório, página de apoio) abrem no navegador.
+- **Servidor da rede de casa** (opcional, só se você ligar): o app troca os
+  pacotes de sincronização do grupo com o servidor que **você mesmo** instalou
+  (container `greycache-sync`), no endereço que você informou. Os pacotes vão
+  cifrados de ponta a ponta com a chave do grupo, que nunca vai para o
+  servidor: ele guarda os pacotes sem conseguir ler. Ninguém além de você e do
+  seu grupo tem acesso a esse servidor.
+
+## Troca rápida e escambo
+
+A Troca rápida passa informações de um celular para outro por QR, sem
+internet: nada sai do aparelho por outro caminho. Nos escambos, cada recibo
+(com o apelido da outra pessoa) fica só no seu aparelho e no seu backup; o
+cartão de credibilidade que você mostra leva só números e datas, nunca com
+quem você trocou nem o que foi trocado.
 
 ## Permissões do Android
 
@@ -64,7 +78,9 @@ log) stays **only on your device**.
 
 The app only goes online to: check for a new version (a public file on GitHub,
 at most weekly, can be turned off); load map tiles from the configured tile
-server (OpenStreetMap by default); and open links you tap. These servers see
+server (OpenStreetMap by default); open links you tap; and, only if you turn
+it on, exchange end-to-end encrypted group sync packages with the home server
+you installed yourself (`greycache-sync`), which cannot read them. These servers see
 your IP address, as with any website; none of your data is sent.
 
 Android permissions: location (show your position on the map when you ask), camera (read

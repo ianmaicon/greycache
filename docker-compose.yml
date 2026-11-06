@@ -8,10 +8,9 @@ services:
       - "8090:80"
     restart: unless-stopped
 
-    # SEM VOLUMES — de propósito: o servidor só entrega arquivos estáticos.
+    # SEM VOLUMES — de propósito: este serviço só entrega arquivos estáticos.
     # Os dados do app vivem no navegador/dispositivo de cada usuário
     # (IndexedDB); backup é feito no próprio app (Ajustes → Exportar JSON).
-    # Um volume de "dados" aqui só criaria uma falsa sensação de backup.
 
     # Endurecimento: filesystem imutável — o nginx só escreve em cache/pid,
     # que ficam em tmpfs (memória). Container comprometido não persiste nada.
@@ -34,3 +33,27 @@ services:
     # teto explícito no homelab:
     # mem_limit: 128m
     # cpus: "0.50"
+
+  # ── Sincronização da rede local (OPCIONAL) ─────────────────────────────────
+  # Os celulares do grupo (APK ou navegador) trocam as mudanças por aqui, na
+  # rede de casa, sem internet. Os pacotes chegam CIFRADOS com a chave do
+  # grupo, que nunca sai dos aparelhos: este serviço não consegue ler nada.
+  # O endereço para o app é o mesmo do GREYCACHE (ex.: http://192.168.0.10:8090).
+  # Não quer sincronizar pela rede? Apague este bloco e o "volumes" do final.
+  greycache-sync:
+    image: ghcr.io/ianmaicon/greycache-sync:latest
+    container_name: greycache-sync
+    volumes:
+      - greycache-sync-data:/data   # só pacotes cifrados; pode apagar e recomeçar
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    # Código de instalação do grupo: aparece no log na primeira vez
+    # ("docker logs greycache-sync"). Para escolher o seu, descomente:
+    # environment:
+    #   SETUP_CODE: "48271590"
+    # mem_limit: 128m
+
+volumes:
+  greycache-sync-data:
