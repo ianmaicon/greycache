@@ -4,6 +4,24 @@
 
 Central de operações **100% offline** para preppers, sobrevivencialistas e gestores de crise. Um PWA self-hosted que funciona sem nuvem, sem cadastro e sem telemetria: **todos os dados ficam no dispositivo de quem usa** (IndexedDB), com backup por export JSON. O container principal serve apenas os arquivos estáticos. Opcionalmente, um segundo container (`greycache-sync`) deixa os celulares do grupo sincronizarem **pela rede de casa, sem internet** — e mesmo ele só guarda pacotes cifrados que não consegue ler.
 
+## Telas
+
+<table>
+  <tr>
+    <td align="center" width="25%"><img src="screenshots/01-painel.png" alt="Painel: o que importa hoje" width="200"><br><sub>Painel: o que importa hoje</sub></td>
+    <td align="center" width="25%"><img src="screenshots/02-mapa.png" alt="Mapa offline com pontos e relatos" width="200"><br><sub>Mapa offline com pontos e relatos</sub></td>
+    <td align="center" width="25%"><img src="screenshots/03-deslocamento.png" alt="Em deslocamento: seta até o ponto de encontro" width="200"><br><sub>Em deslocamento: seta até o ponto de encontro</sub></td>
+    <td align="center" width="25%"><img src="screenshots/04-inventario.png" alt="Inventário com validades e autonomia" width="200"><br><sub>Inventário com validades e autonomia</sub></td>
+  </tr>
+  <tr>
+    <td align="center" width="25%"><img src="screenshots/05-agua-energia.png" alt="Água e energia em dias" width="200"><br><sub>Água e energia em dias</sub></td>
+    <td align="center" width="25%"><img src="screenshots/06-grupo.png" alt="Grupo e funções" width="200"><br><sub>Grupo e funções</sub></td>
+    <td align="center" width="25%"><img src="screenshots/07-centro-de-crise.png" alt="Centro de Crise no Modo Colapso" width="200"><br><sub>Centro de Crise no Modo Colapso</sub></td>
+  </tr>
+</table>
+
+<sub>Imagens com dados fictícios.</sub>
+
 ## O que o app faz
 
 - **Modo Preparação** (rotina): inventário com autonomia calculada (calorias estimadas automaticamente, validades por lote), estoque mínimo com Lista de Recompra, caixa de medicamentos com cobertura em dias da medicação de uso contínuo, frota com checklists, equipamentos e manutenção, arsenal com documentos vigiados, mapa com waypoints e áreas offline (com uma fonte de mapas que permita uso offline), biblioteca de conhecimento, Índice de Prontidão 0–100 e Revisão Semanal guiada.
